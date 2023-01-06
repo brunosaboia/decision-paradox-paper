@@ -1,5 +1,10 @@
+# auxiliary TeX files
 *.aux
 *.log
-*.pdf
 *.out
 *.synctex.gz
+*.bbl
+*.blg
+
+# output
+*.pdf
