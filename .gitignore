@@ -5,6 +5,12 @@
 *.synctex.gz
 *.bbl
 *.blg
+*.fdb_latexmk
+*.fls
 
 # output
 *.pdf
+!bib/*.pdf  # Exception: track PDF files inside the bib/ directory
+
+# Mac OS files
+.DS_Store
