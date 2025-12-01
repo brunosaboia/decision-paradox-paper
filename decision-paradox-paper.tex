@@ -3,17 +3,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{hyperref}
+
+\title{The Digital Era of Information Overflow and its Underlying "Choice Paradox"}
+\author{Bruno Saboia de Albuquerque\thanks{Many thanks to my co-workers at the Bank for International Settlements (\url{https://bis.org}) for their immeasurably valuable comments and help.}\and Christophe Laforge}
+
 \hypersetup{
-	%pagebackref=true,
 	pdftitle={\@title},
 	pdfauthor={\@author},
-	pdfsubject={Essay about Bitcoins, with facts and questions},
-	pdfcreator={LaTeX with abnTeX2},
-	pdfkeywords={bitcoins criptocurrencies digital currencies},
-	colorlinks=true,            % false: boxed links; true: colored links
-	linkcolor=blue,             % color of internal links
-	citecolor=blue,             % color of links to bibliography
-	filecolor=magenta,          % color of file links
+	pdfsubject={Essay about the paradox of choice},
+	pdfcreator={TeXstudio},
+	pdfkeywords={choice paradox},
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=magenta,
 	urlcolor=blue,
 	bookmarksdepth=4
 }
@@ -21,19 +24,14 @@
 \parindent=0pt
 \parskip=0.35cm
 
-
-\title{The digital era of information overflow and its underlying ``choice paradox''}
-\author{Bruno Saboia de Albuquerque\thanks{Many thanks for my co-workers at the Bank for International Settlements (\url{https://bis.org}) for their immeasurably valuable help.}\and Christophe Laforge}
-
 \date{March 2023}
 
 \begin{document}
 	\maketitle
 
 	\begin{abstract}
-		\noindent The established microeconomics consumer theory considers that a consuming agent with more choices  is at least as one with less -- a concept that has been conveyed before by folklore, with the well-known saying: ``the more, the merrier''. However, it might be the case that more choices are actually harmful to the consumer. Our goal is to investigate if -- and when -- having many choices jeopardizes consumer well-being, and devise optimal strategies given an overwhelming amount of choices -- common on the current era of streaming platforms and digital information.
+		\noindent Established microeconomic theory asserts that a consumer with more choices is at least as well off as one with fewer—a concept reflected in the saying: "the more, the merrier." However, there are cases where more choices may actually harm consumers. Our goal is to investigate if—and when—having many choices jeopardizes consumer well-being and to devise optimal strategies given the overwhelming number of choices prevalent in the digital era of streaming platforms and information overflow.
 
-		%\vspace{\onelineskip}
 		\noindent
 		\\\textbf{Key-words}: Microeconomics. Consumer choice. Choice paradox.
 
@@ -41,74 +39,64 @@
 	\clearpage
 
 	\section{Introduction}
-	Intuitively, it seems better to have more choices than fewer. On developed economies, where a free market is present, consumers enjoy a multitude of options to purchase goods and services provided by firms. Thus, consumers can presumably express their preferences in a way that is more satisfactory to them. This is seemingly better than the situation in underdeveloped or authoritarian countries, where there is no free market and choices can be limited. In the end, no matter how wealthy an individual is, they cannot improve their life quality without choices.
+	Intuitively, it seems better to have more choices rather than fewer. In developed market economies, consumers enjoy a multitude of options for goods and services, usually provided by competing firms. Consumers can presumably express their preferences more satisfactorily in such economies.
 
-	However, the era of internet overwhelmed consumers with many different options, bringing an apparent paradox: it seems that there are cases that having \textit{too much} choice is indeed harmful. Some online services provide so many choices that consumers have a difficult task when trying to select what they want. For example, on streaming platforms, so many choices are provided that consumers have a difficult task when choosing which film to watch. Some customers even give up of using a service because of the insurmountable task to select one option between hundreds of thousands alternatives. It is like the proverbial searching for a needle in a haystack.
+	This is seemingly preferable to the situation in underdeveloped economies, where limited markets restrict choices. No matter how wealthy an individual is, their quality of life cannot improve without meaningful choices.
 
-	The modeling of consumer's choice within a mathematical framework certainly helped economists to have a better understanding of how consumers behave in reality. These models bring concepts, such as \textbf{preferences} and \textbf{utility}, that are useful for students, teachers, researchers and those who are interested in predicting how a consumer will behave in the future, or explain why it behaved in a certain way in the past, in regards to their choices.
+	However, the internet era has overwhelmed consumers with a flood of options, creating an apparent paradox: in some cases, having \textit{too many} choices may be detrimental. Certain online services provide such an extensive range of choices that consumers struggle to make a selection. For example, on streaming platforms, the sheer volume of available films can make choosing what to watch a daunting task. Some users even abandon a service due to the overwhelming difficulty of selecting one option from hundreds of thousands—akin to searching for a needle in a haystack.
 
-	Unfortunately, these models seems to fail explaining why having many choices, such as in the example of streaming platforms, can indeed be harmful for a consumer. Many authors have discussed about the this subject. For example, a research found that ``people are more likely to purchase gourmet jams or chocolates or to
-	undertake optional class essay assignments when offered a limited array of 6 choices rather than a more extensive array of 24 or 30 choices.'' \cite{IYENGAR_LEPPER_2000}.
+	Mathematical models of consumer choice in microeconomics have been instrumental in understanding consumer behavior. These models introduce concepts such as \textbf{preferences} and \textbf{utility}, which are valuable for researchers, educators, and analysts aiming to predict or explain consumer decisions.
 
-	Our goal in this article is to understand this phenomena of a consumer with many choices, and model these circumstances under the same mathematical framework usually used on the microeconomic theory of consumer choice.
+	Unfortunately, these models seem inadequate in explaining why having many choices—such as in the case of streaming platforms—can be detrimental to a consumer. Many authors have explored this topic. For example, one study found that "people are more likely to purchase gourmet jams or chocolates or to undertake optional class essay assignments when offered a limited array of 6 choices rather than a more extensive array of 24 or 30 choices" \cite{IYENGAR_LEPPER_2000}. This suggests that there exists a limit beyond which additional options begin to harm decision-making.
 
-	\section{Preferences axioms}
-	Preferences are usually stated by a binary relation. The usual mathematical notation for representing the statement that  statement is $A \succsim B$\footnote{For our purposes, it is unnecessary to make a distinction between preference and strict preference relations.}.
+	Our goal in this paper is to understand this phenomenon and model these circumstances within the same mathematical framework traditionally used in the microeconomic theory of consumer choice.
 
-	In the introduction, we said that consumer preferences are usually characterized by an axiomatic system. The two main axioms are \textit{completeness} and \textit{transitivity}. Explaining the axioms in laymen terms, we can state the following:
+	\section{Preference Axioms}
+	Preferences are typically described by a binary relation. The standard mathematical notation for expressing preference is $A \succsim B$\footnote{For our purposes, we do not distinguish between preference and strict preference relations.}.
+
+	Consumer preferences are usually characterized by an axiomatic system. The two main axioms are \textit{completeness} and \textit{transitivity}:
 
 	\begin{description}
-		\item[Completeness]: consumers are able to evaluate their preferences between different given alternatives. That is, given a finite number of choices, the consumer will be able to rank them, from best to worse.
-		\item[Transitivity]: consumer choice is consistent, that is, if choice A is preferred to B, and B is preferred to C, then A is also preferred to C.
+		\item[Completeness]: Consumers can evaluate their preferences between different given alternatives. That is, given a finite number of choices, the consumer can rank them from best to worst.
+		\item[Transitivity]: Consumer choice is consistent. If choice A is preferred to B and B is preferred to C, then A is also preferred to C.
 	\end{description}
 
-
-
-	Going further and explaining transitivity in the usual binary relation notation, let $X$ be the consumption set, and let $x_i \in \mathbb{R}$ be the number of units of commodity $i$\footnote{Hence, the commodity quantity is expressed in some infinitely divisible units.}, and let $x^k= (x_1, x_2, \dots, x_n) \in X$ be the consumption bundle $k$, being $n$ a finite number. Assume that $X \subseteq \mathbb{R}_+^n$, $0 \in X$, and furthermore that $X$ is closed and convex. Let $x^1, x^2, x^3 \in X$ be consumption bundles. If the following two statements hold:
+	Mathematically, let $X$ be the consumption set, where $x_i \in \mathbb{R}$ represents the number of units of commodity $i$\footnote{Commodity quantity is expressed in infinitely divisible units.}. Let $x^k= (x_1, x_2, \dots, x_n) \in X$ be the $k$-th consumption bundle, where $n$ is finite. Assume that $X \subseteq \mathbb{R}_+^n$, $0 \in X$, and that $X$ is closed and convex. Let $x^1, x^2, x^3 \in X$ be consumption bundles. Then, if:
 
 	\begin{equation}
-		x^1 \succsim x^2; x^2 \succsim x^3
+		x^1 \succsim x^2, \quad x^2 \succsim x^3
 	\end{equation}
 
-	Then the following statement will also necessarily hold:
+	it follows that:
 
 	\begin{equation}
 		x^1 \succsim x^3
 	\end{equation}
 
-	The transitivity axiom might seem fairly intuitive. If one prefers apples to oranges, and oranges to bananas, intuition can tell that one will also prefer apples to bananas. However, empirical evidence seems to demonstrate that preferences are in reality intransitive \cite{GUADALUPELANAS2020e03459}.
+	Although transitivity seems intuitive (e.g., if one prefers apples to oranges and oranges to bananas, one should prefer apples to bananas), empirical evidence suggests that real-world preferences are often intransitive \cite{GUADALUPELANAS2020e03459}.
 
-	This perhaps raise suspicion on the completeness axiom, which by some naïve intuition can already feel wrong: to be able to completely evaluate one's preferences, one must be able to know the utility of the alternative. In many cases, consumer's do not necessarily know if a different choice would bring a better utility. Therefore, real-life choice seems to involve uncertainty -- something not captured by this simple model of consumer choice.
+	This raises questions about the completeness axiom. In reality, consumers may not always be able to determine the utility of an alternative choice. Many choices involve uncertainty, an aspect not captured by the traditional consumer choice model.
 
-	\section{Utility and choices}
-	Usually, the bundles referred in the preferences theory are composed of multiple elements. Naturally, a bundle can consist of a single element -- for that, the vector of quantities is $0$ for all commodities, except from one. That is, let  $y > 0$ and let $x = (y_1, 0_{2}, 0_{3}, \dots, 0_n)$ be a bundle with $n$ items. Only the first item has any quantity on it. Therefore, this bundle can be simplified to $x = (y_1)$.
+	\section{Utility and Choices}
+	Utility functions typically represent preferences over bundles of multiple elements. However, in our case, let us simplify by assuming that each bundle consists of a single element.
 
-	In our case, for the sake of simplification, let us assume that our bundles contain a single element as described above, and that for each bundle, $x^k = (x_i), x^{k+1}= (x_{i+1}), \dots , x^{k+j} = (x_{i+j})$ -- that is, no bundle contains an element already present in another bundle. In other words, all bundles consists of a single element, which is unique across the bundle set. Let us call such bundle set a \textit{choice}. Let also $k+j$ be finite, so there is a finite number of choices. The sum $k+j$ is therefore the total number of choices.
-
-	Let $u(x^k) \in \mathbb{R}_+^n$ be the utility function of the $k$-th choice, and let $U_k$ be the sum of the utilities of a given set of choices $(x^1, \dots , x^k)$, so that:
+	Let $u(x^k) \in \mathbb{R}_+^n$ be the utility function of the $k$-th choice, and let $U_k$ be the sum of utilities over a given choice set:
 
 	\[ U_k = \sum_{n=1}^{k} u(x^n) \]
 
-	We cannot infer from the axioms that the following does not hold:
+	We assume that \textit{utility is non-decreasing with additional choices}:
 
 	\begin{equation}
-		U_k \leq U_{k+j} \forall j \in \mathbb{N}_{> 0}
+		U_k \leq U_{k+j} \quad \forall k,j \in \mathbb{N}_{> 0}
 	\end{equation}
 
-	That is, the total utility yielded by a set of choices with $k$ elements is at least as good as a set with $k+j$ elements. Therefore, we can assume that \textit{utility is non-decreasing on choice}. One is never worse of, in terms of utility, by having an additional choice.
+	That is, a larger choice set should, in theory, yield at least as much utility as a smaller one. However, empirical findings challenge this assumption, suggesting that excessive choices may decrease utility due to cognitive overload.
 
-	Although Pareto observed that utility is incomparable between two different consumers and that a measurable value for the utility function was not necessary for the demand theory \cite{pareto1897}, the notion of a negative value for the utility function of a given consumption bundle seems indeed counter intuitive. Of course, the actual consumption of some goods -- such as alcoholic spirits or cigarettes -- may be harmful to the customer. However, let us ignore this possibility, and do a thought experiment.
+	\section{Future Work: Incorporating Evaluation Penalties}
+	The standard microeconomic model does not account for the cognitive costs of decision-making. Every additional choice requires time and effort to evaluate. When the number of options grows excessively, the time to assess them becomes prohibitively large, leading to what some call \textit{analysis paralysis}.
 
-	Imagine a customer with no budget restriction. Additionally, imagine that such customer does not infer in storage costs -- or any other cost for holding an additional choice. Such customer likes bananas and apples. Now, suppose that he is presented with two choices: one banana, or one banana and one apple. It is logical that the first set, containing only one banana, yields \textit{at least} the same utility than one banana and one apple.
+	We will now define a penalty function that quantifies this cognitive burden and investigate under what conditions excessive choice leads to net utility loss.
 
-	Therefore, it seems counter-intuitive that it is the number of available choices itself that brings harm to the consumer.
-
-	\subsection{Ranking choices}
-	Recall that, by definition, the number of items in a given consumption bundle is finite. This condition is necessary so that ranking between different bundle sets is possible. If there were infinite commodities in a given consumption bundle, then its utility would be ill-defined, thus ranking a bundle containing infinite elements against a different bundle would not be possible.
-
-	In the simplified consumer model, the ranking of choices is already given.
-
-
-\bibliographystyle{unsrt}
-\bibliography{decision-paradox-paper}
+	\bibliographystyle{unsrt}
+	\bibliography{decision-paradox-paper}
 \end{document}
